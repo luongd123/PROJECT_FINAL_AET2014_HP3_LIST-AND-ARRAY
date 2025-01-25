@@ -20,9 +20,11 @@ double strToDouble(string s){
     }
     res += 1.0 * stoi(int_part);
     double tmp = 0.0;
-    int p = double_part.size();
-    tmp += 1.0 * stoi(double_part) * pow(10, -1 * p);
-    res += tmp;
+    if (double_part.size()) {
+        int p = double_part.size();
+        tmp += 1.0 * stoi(double_part) * pow(10, -1 * p);
+        res += tmp;
+    }
     return res;
 }
 
@@ -308,6 +310,10 @@ void Add_Student(list<Student> &LS){
     while (true) {
         cout << "Student code (8 digits, follow the standard of VNU student code): ";
         getline(cin, S_code);
+        if (S_code.size() == 0) {
+            cout << "Invalid student code. Please enter a 8-digit number." << endl;
+            continue;
+        } 
         if (S_code == "q" || S_code == "exit") {
             cout << "Cancelling the add student process.\n";
             return;
@@ -337,7 +343,7 @@ void Add_Student(list<Student> &LS){
             return;
         }
         standardize_Name(Full_name);  // Chuẩn hóa tên 
-        if (isValidName(Full_name)) {
+        if (isValidName(Full_name) && Full_name.size() != 0) {
             break;
         }
         else{
@@ -355,7 +361,7 @@ void Add_Student(list<Student> &LS){
         }
         standardize_Date(date);  // Chuẩn hóa ngày 
        
-        if (isValidDate(date)) {
+        if (isValidDate(date) && date.size() != 0) {
             break;  
         } else {
             cout << "Invalid date format. Please enter the date in dd-mm-yyyy format.\n";
@@ -371,7 +377,7 @@ void Add_Student(list<Student> &LS){
             cout << "Cancelling the add student process.\n";
             return;
         }
-        if (!isValidDouble(str_grade)) {
+        if (!isValidDouble(str_grade) || str_grade.size() == 0) {
             cout << "Invalid grade. Please enter a number between 0.0 and 10.0 .\n";
             continue;
         }
