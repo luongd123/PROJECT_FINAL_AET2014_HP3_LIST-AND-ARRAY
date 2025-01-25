@@ -62,8 +62,8 @@ Just build it my self
 - 24110215
 - Lương Chí Dũng 
 
-
-*THIS PROGRAM CAN NOT RUN WITH A LIST OF 100000 Students or above because i use liner search for searching(to lazy to overload operators, may be i'll do it to apply binary_search or something faster on this program but i think there won't be any school that have more than 10000 studens : DDDDD)*
+##NOTES
+- THIS PROGRAM CAN NOT RUN WITH A LIST OF 100000 Students or above because i use liner search for searching(I'll overload operators to apply binary_search or something faster on this program but i think there won't be any school that have more than 10000 students)
 
 
 
