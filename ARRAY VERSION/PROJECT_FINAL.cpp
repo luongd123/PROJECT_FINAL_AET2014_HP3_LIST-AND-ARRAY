@@ -6,7 +6,7 @@ const ll MOD = 1e9 + 7;
 double strToDouble(string s){
     int n = s.size();
     int i = 0;
-    string int_part = "" , double_part = "";
+    string int_part = "" , double_part = ""; 
     double res = 0.0;
     while (s[i] != '.' && s[i] != ',' && i <= n - 1) {
         int_part += s[i];
